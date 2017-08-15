@@ -19,11 +19,34 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
+  text-shadow: 3px 2px rgb(53, 53, 53);
+}
+
+.typer  h1 {
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid rgb(255, 255, 255); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 3.5s infinite,
+    blink-caret .75s step-end infinite;
+}
+
+.typeBack h1 {
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid rgb(255, 255, 255); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typeBack 2s steps(90, end) infinite,
+    blink-caret .75s step-end infinite;
 }
 
 span {
   font-size: 36px;
-  font-wieght: bolder;
+  font-weight: bolder;
 }
 
 img {
@@ -49,6 +72,9 @@ and (max-device-width : 480px) {
     span {
       font-size:18px;
 }
+  #youAre {
+    font-size: 16px;
+}
 }
 
 /* Animations */
@@ -57,4 +83,19 @@ and (max-device-width : 480px) {
 	50% { opacity: 1; }
 	50.01% { opacity: 0; }
 	100% { opacity: 0; }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes typeBack {
+  from { width: 98% }
+  to { width: 0 }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #FFFFFF; }
 }
