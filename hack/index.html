@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let's Hack</title>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="grid">
+        <div class="title">
+            <span id="side">&lt;code&gt;</span>
+            LET'S HACK!
+            <span id="side">&lt;/code&gt;</span>
+        </div>
+        <div class="timer">
+            <div class="head1">
+                <span>TIME TO <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy01VMNcIormjTAp0N0Iw2i5MfjjIJJ1JlvOhIWLY4KWiJrA/viewform?usp=sf_link">REGISTER!</a></span>
+            </div>
+            <div id="clock"></div>
+        </div>
+        <div class="rules">
+                <span id="side">&lt;rules&gt;</span>
+            <ol>
+                <li>Code a lot</li>
+                <li>Time Period: 48hrs</li>
+                <li>Hangout must be attended after completion</li>
+            </ol>
+            <span id="side">&lt;/rules&gt;</span>
+        </div>
+        <div class="faq">
+            <span id="side">&lt;faq&gt;</span>
+            <ol>
+                <li>Q. Can I have a team? : Yes, you may.</li>
+                <li>Q. How do I track the event?: Secret :)</li>
+                <li>Q. I am god!: Good for you</li>
+            </ol>
+            <span id="side">&lt;/faq&gt;</span>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+<script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Sep 20, 2017 15:03:03").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get todays date and time
+          var now = new Date().getTime();
+        
+          // Find the distance between now an the count down date
+          var distance = countDownDate - now;
+        
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+          // Display the result in the element with id="demo"
+          document.getElementById("clock").innerHTML = days + "days " + hours + "hours "
+          + minutes + "min " + seconds + "sec ";
+        
+          // If the count down is finished, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("clock").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+    </script>
+</body>
+</html>
