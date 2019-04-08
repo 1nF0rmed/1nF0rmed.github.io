@@ -139,7 +139,7 @@
 
     <center>
 
-				<img src = 'Dora3.png' height="100px" width="100px" style='vertical-align: middle' />
+				<img src = 'dora3.png' height="100px" width="100px" style='vertical-align: middle' />
 
 
 
@@ -162,6 +162,12 @@
             <p style = 'line-height: 60px;font-family: Helvetica;color: black;font-size: 50px;' id="humidity">
 
                 <img src = 'humidity.png' height="60px" width="60px" style='vertical-align: middle' /> 00.00
+
+            </p>
+		   
+	<p style = 'line-height: 60px;font-family: Helvetica;color: black;font-size: 50px;' id="pHlevel">
+
+                <img src = 'pesticide.png' height="60px" width="60px" style='vertical-align: middle' /> 00.00
 
             </p>
 
@@ -187,14 +193,18 @@
 
 		function loaddata(){
 
-                    var val= data;
+             
                    var humid=Math.floor((Math.random() * 100) + 54);
 
                    var temper=Math.floor((Math.random() * 32) + 28);
 
+                   var pHlevel=Math.floor((Math.random() * 8) + 6);
+
                    document.getElementById("temperature").innerHTML = "<img src = 'temperature.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  " +temper;
 
                    document.getElementById("humidity").innerHTML = "<img src = 'humidity.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  "+humid;
+		
+		document.getElementById("pHlevel").innerHTML = "<img src = 'humidity.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  "+pHlevel;
 
       
 
