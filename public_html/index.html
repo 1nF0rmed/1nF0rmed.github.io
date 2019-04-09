@@ -101,7 +101,7 @@
 
 			padding-right: 30px;
 
-			padding-bottom: 50px;
+			padding-bottom: 70px;
 
 			padding-left: 30px;
 
@@ -190,15 +190,19 @@
             loaddata();
 
         };
+		function randomIntFromInterval(min,max) // min and max included
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
 
 		function loaddata(){
 
              
-                   var humid=Math.floor((Math.random() * 70) + 54);
+                   var humid=randomIntFromInterval(54, 92);
 
-                   var temper=Math.floor((Math.random() * 30) + 10);
+                   var temper=randomIntFromInterval(28, 36);
 
-                   var pHlevel=6;
+                   var pHlevel=randomIntFromInterval(5, 6);
 
                    document.getElementById("temperature").innerHTML = "<img src = 'temperature.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  " +temper;
 
