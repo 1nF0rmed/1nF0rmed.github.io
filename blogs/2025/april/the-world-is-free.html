@@ -12,10 +12,6 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -50,22 +46,134 @@
             color: #000;
             pointer-events: none;
         }
+        .title {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 1.2em;
+        }
+        .caption {
+            font-size: 0.8em;
+            color: #2b2b2b;
+        }
+        .img-half {
+            max-width: 50%;
+            height: auto;
+        }
+        .img-full {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#" style="text-decoration: none; cursor: default;" class="active" >Home</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="opensource.html">Opensource</a>
-        <a href="3dprinting.html">3D Prints/Models</a>
-        <a href="/blogs/index.html">Blog</a>
+        <a href="/">Home</a>
+        <a href="/research/">Research</a>
+        <a href="/projects/">Projects</a>
+        <a href="/opensource/">Opensource</a>
+        <a href="/3dprinting/">3D Prints/Models</a>
+        <a href="/blogs/" style="text-decoration: none; cursor: default;" class="active">Blog</a>
     </nav>
     <p>
-        My thoughts on the random subjects that interest me. Sometimes I write about RL research, maybe Robotics, or whatever I'm thinking about.
+       <div class="title">The world is free</div>
+       <div class="subtitle">2025 Q1 update</div>
     </p>
     <p>
-        The world is free and changing. My thoughts and opinions will as well.
+        <p>
+            As I sit at a random cafe in the heart of Bengaluru(Bangalore), I'm thinking about the pace of change in the past year.
+            Going from experiment to experiment as we pivot to find something that clicks, moving through the phases of excitement and frustration while handling family emergencies - I'm not sure how time passed.
+            The new year kicked in when least expected and I'm not sure if I was ready for it. Between the startup and personal ambitions, I am a bit lost.
+        </p>
+        <p>
+            I needed a challenge, something that can get me out of this rut - but it needed to be smoething outside of my day to day.
+        </p>
+        <p>
+            I needed to go back to <b>hardware</b>.
+        </p>
+        <p>
+            Of all the conversations I had with my friends, one about needing a dragonball vegeta keychain stuck with me. "I can model and print that!" I thought to myself and there we reignited the drive to do something.
+            Well, its been a while since I've done anything with Blender, but I was sure I could figure it out. But I needed to make the MVP0 of this project something simple but hits the spot.
+            I decided to make a "Funk Pop" style model of Vegeta. This was exciting. Spending time after work on several YouTube videos on blender modelling and sketching using the 2D reference images - finally I had a version that could be printed.
+        </p>
+        <p>
+            <img src="/images/vegeta-model.jpg" alt="Vegeta Funk Pop" class="img-half"><br>
+            <span class="caption">Fig 1. First MVP0 3D print of Vegeta</span>
+        </p>
+        <p>
+            The first version you see in Fig 1, was designed and printed in a week. With the little time I was able to spare after work, I think what I designed was passable.
+            But it did get the engine running again, so with this new momemntum - I decided to build a sort of hardware project.
+            From product design, protoyping electronics to printing and assembling the final product. I wanted to build hardware again :)
+        </p>
+        <p>
+            I wanted to build a pomodoro timer, but the design needed to be intuitive and with minimal buttons. Again, the first version just needs to "work" and be passable. We can always improve it in later iterations.
+            The focus would be on visual communication and hand feel of the product. The core functionality would just be to start and stop the timer based on the user selection.
+            The timer needed to be something I can turn with my hand to set the timer and tap/press as a whole to stop the timer. You can see my thoughts represented in Fig 2.a and 2.b.
+        </p>
+        <p>
+            <img src="/images/high-level-pomodoro.jpeg" alt="Timer design thoughts - components" class="img-full"><br>
+            <span class="caption">Fig 2.a Timer design thoughts - components</span>
+        </p>
+        <p>
+            <img src="/images/high-level-pomodoro-2.jpeg" alt="Timer design thoughts" class="img-full"><br>
+            <span class="caption">Fig 2.b Timer design thoughts - look and feel</span>
+        </p>
+        <p>
+            Excited, I ordered the components from Robu.in and started working on the firmware for the timer logic. I mainly wanted to use Xiao ESP32-S3 because I've already used it in the light saber project and it is extremely small.
+            For this project, we do have size constraints and I wanted to use small components that are easy to source - so choosing some generic components was the way to go. While working on this and prototyping the hardware,
+            an interesting opportunity presented itself.
+            The <a href="https://elevenlabs-worldwide-hackathon.devpost.com/">ElevenLabs World Hackathon</a> was announced and my hacking buddies wanted to go.
+        </p>
+        <p>
+            It was a no brainer! Given that I was on track to getting out of my rut and needed to expose myself to new tech to find a different avenue for the startup, I decided to go for it.
+        </p>
+        <p>
+            After hours of brainstorming, my buddy(Nithin) presented an idea we thought was "something that should have existed" - Dynamic audio ads in conversational AI. Ads that are contextual and fit into the conversation with AI,
+            Ads that are dynamically placed into podcast conversation, monologues, stories, etc. We decided to build the future of "fun" ads in audio. Between travelling to-fro from the venue and hacking over night, we had built a 
+            version that demonstrated the concept.
+        </p>
+        <p>
+            With a messy presentation and a lot of work, we came in 3rd place in the hackathon. It was a great experience and I'm glad I was able to get out of my rut and build something new.
+            (Kudos to my team for the hard work and the sleepless nights! Nithin and Ashwin did some great work). Checkout Fig 3 for the Ghibli style team photo.
+        </p>
+        <p>
+            <img src="/images/hackathon-11labs.jpeg" alt="ElevenLabs World Hackathon" class="img-full"><br>
+            <span class="caption">Fig 3. ElevenLabs World Hackathon - 3rd place</span>
+        </p>
+        <p>
+            With this newfound energy, I spent some time working with the team at Kili to see what we can build. This prototyping session of a few days let to the first version of AIDE.
+            You can try it out <a href="https://getaide.ai/">AIDE</a>. Bussiness lose a ton of money from missed calls every year, we wanted to build a tool that can help them answer more calls even when they are busy.
+        </p>
+        <p>
+            With the upcoming quater, I want to do the following:
+            <ul>
+                <li>
+                    <p>
+                        <p>Startup</p>
+                        <ul>
+                            <li>Improve the agent experience and voice quality</li>
+                            <li>Build an intuitive workflow that is hands off and simple for business owners</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <p>Personal</p>
+                        <ul>
+                            <li>Finish the pomodoro timer prototype build.</li>
+                            <li>Simplify the pomodoro timer and attempt to sell it as a product.</li>
+                            <li>Work on Robot Grasping and manipulation</li>
+                            <li>Spend at least 8-10 hours a week on Robotics research</li>
+                        </ul>
+                    </p>
+                </li>
+            </ul>
+        </p>
+        <p>
+            I'm looking forward to the upcoming quater and what we can build.
+            Exiciting times ahead!
+        </p>
     </p>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ3SHQYC2Z"></script>
