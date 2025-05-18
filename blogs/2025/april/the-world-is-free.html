@@ -67,33 +67,6 @@
     <p>
         The world is free and changing. My thoughts and opinions will as well.
     </p>
-    <div class="whats-new">
-        <span style="font-weight: bold;">Whats new?</span>
-        <span><a href="07-04.html">The World is Free</a></span>
-    </div>
-    <div id="blog-list"></div>
-    <script>
-        async function listBlogPosts() {
-            try {
-                const response = await fetch('/blogs/2025/');
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const links = Array.from(doc.querySelectorAll('a'))
-                    .filter(a => a.href.endsWith('.html'));
-                
-                const blogList = document.getElementById('blog-list');
-                links.forEach(link => {
-                    const p = document.createElement('p');
-                    p.innerHTML = `<a href="${link.href}">${link.textContent}</a>`;
-                    blogList.appendChild(p);
-                });
-            } catch (error) {
-                console.error('Error fetching blog posts:', error);
-            }
-        }
-        listBlogPosts();
-    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ3SHQYC2Z"></script>
     <script>
