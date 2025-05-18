@@ -59,33 +59,41 @@
         <a href="projects.html">Projects</a>
         <a href="opensource.html">Opensource</a>
         <a href="3dprinting.html">3D Prints/Models</a>
-        <a href="blogs/index.html">Blog</a>
+        <a href="/blogs/index.html">Blog</a>
     </nav>
-    <p>Hi! I'm Rahul, I like building cool shit.</p>
-    <p>This is my personal website, where I share my thoughts and projects.</p>
-    <p>I'm currently hacking on voice agents at my first startup. Building <a href="https://getaide.ai">Aide</a> with an awesome team.</p>
-    <p>My interests include:</p>
-    <ul>
-        <li>Autonomous Agents</li>
-        <li>Reinforcement Learning</li>
-        <li>Robotics</li>
-        <li>Computer Vision</li>
-        <li>Hardware</li>
-    </ul>
+    <p>
+        My thoughts on the random subjects that interest me. Sometimes I write about RL research, maybe Robotics, or whatever I'm thinking about.
+    </p>
+    <p>
+        The world is free and changing. My thoughts and opinions will as well.
+    </p>
     <div class="whats-new">
         <span style="font-weight: bold;">Whats new?</span>
-        <span><a href="projects.html#light-saber">Light Saber</a></span>
-        <span><a href="3dprinting.html#first-makercoin">First Makercoin</a></span>
+        <span><a href="07-04.html">The World is Free</a></span>
     </div>
-    <p>
-        <p><img src="images/jarvis-crop.jpg" alt="Bot Image"></p>
-        <p style="font-size: 0.8em;">
-            This is JARVIS, a home assistant robot I built in high school. Raspberry Pi, some computer vision, motors and a few sensors.
-        </p>
-        <p style="font-size: 0.8em;">
-            Thats all you needed to build a bot that recognizes faces, tracks per user todos, has basic conversations and run a simple <a href="https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping" target="_blank">SLAM</a> algo.
-        </p>
-    </p>
+    <div id="blog-list"></div>
+    <script>
+        async function listBlogPosts() {
+            try {
+                const response = await fetch('/blogs/2025/');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const links = Array.from(doc.querySelectorAll('a'))
+                    .filter(a => a.href.endsWith('.html'));
+                
+                const blogList = document.getElementById('blog-list');
+                links.forEach(link => {
+                    const p = document.createElement('p');
+                    p.innerHTML = `<a href="${link.href}">${link.textContent}</a>`;
+                    blogList.appendChild(p);
+                });
+            } catch (error) {
+                console.error('Error fetching blog posts:', error);
+            }
+        }
+        listBlogPosts();
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ3SHQYC2Z"></script>
     <script>
